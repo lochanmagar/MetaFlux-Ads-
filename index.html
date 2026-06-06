@@ -1,0 +1,1124 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MetaFlux Ads | Premium AI Product & UGC Ads for Beauty & Skincare</title>
+    
+    <!-- Google Fonts Connection -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bgMain: '#080808',
+              accentGold: '#C9A96E',
+              textWarm: '#F0EBE3',
+              cardGray: '#1A1A1A',
+            },
+            fontFamily: {
+              sans: ['"DM Sans"', 'sans-serif'],
+              bebas: ['"Bebas Neue"', 'sans-serif'],
+              serif: ['"Instrument Serif"', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Custom Luxury Animations & Utility CSS -->
+    <style>
+      /* Smooth marquee scrolling */
+      @keyframes marquee {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-50%); }
+      }
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marquee 25s linear infinite;
+      }
+      .marquee-track:hover {
+        animation-play-state: paused;
+      }
+
+      /* Scroll reveal */
+      .reveal {
+        opacity: 0;
+        transform: translateY(25px);
+        transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Glowing custom borders */
+      .glow-gold:hover {
+        box-shadow: 0 0 20px rgba(201, 169, 110, 0.2);
+        border-color: #C9A96E;
+      }
+
+      /* Green status dot pulse */
+      @keyframes pulse-dot {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.4); opacity: 0.5; }
+      }
+      .pulse-dot {
+        animation: pulse-dot 2s infinite ease-in-out;
+      }
+
+      /* Styled custom scrollbar for luxury feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #080808;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1A1A1A;
+        border-radius: 4px;
+        border: 2px solid #080808;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #C9A96E;
+      }
+    </style>
+  </head>
+  <body class="bg-bgMain text-textWarm font-sans antialiased overflow-x-hidden selection:bg-accentGold selection:text-bgMain">
+
+    <!-- NAVIGATION (fixed top) -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-bgMain/90 backdrop-blur-md border-b border-white/[0.06] transition-all duration-300" id="main-nav">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="text-2xl font-bebas tracking-wide flex items-center space-x-1 hover:opacity-90 transition-opacity">
+          <span>META</span><span class="text-accentGold">FLUX</span><span> ADS</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+          <a href="#process" class="hover:text-accentGold transition-colors nav-link py-2 border-b-2 border-transparent">Process</a>
+          <a href="#packages" class="hover:text-accentGold transition-colors nav-link py-2 border-b-2 border-transparent">Packages</a>
+          <a href="#work" class="hover:text-accentGold transition-colors nav-link py-2 border-b-2 border-transparent">Work</a>
+          <a href="#reviews" class="hover:text-accentGold transition-colors nav-link py-2 border-b-2 border-transparent">Reviews</a>
+          <a href="#faq" class="hover:text-accentGold transition-colors nav-link py-2 border-b-2 border-transparent">FAQ</a>
+        </nav>
+
+        <!-- Book a Call Button -->
+        <div class="hidden md:flex items-center">
+          <a href="https://www.instagram.com/metaflux_ads" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-accentGold text-bgMain font-medium text-sm tracking-wider hover:bg-opacity-90 rounded-none transition-all duration-300 hover:tracking-widest flex items-center gap-2 border border-accentGold group" id="desktop-book-btn">
+            BOOK A CALL
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Hamburger Trigger -->
+        <button class="md:hidden text-textWarm focus:outline-none p-2" id="menu-btn" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-8 h-8" id="menu-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Drawer Overlay -->
+      <div class="fixed inset-x-0 top-20 bg-bgMain/98 border-b border-white/[0.08] pointer-events-none opacity-0 -translate-y-4 transition-all duration-300 md:hidden z-40" id="mobile-menu">
+        <div class="px-8 py-10 flex flex-col space-y-6 text-xl font-bebas tracking-wider">
+          <a href="#process" class="mobile-link text-textWarm hover:text-accentGold transition-colors py-1">1. The Process</a>
+          <a href="#packages" class="mobile-link text-textWarm hover:text-accentGold transition-colors py-1">2. Core Packages</a>
+          <a href="#work" class="mobile-link text-textWarm hover:text-accentGold transition-colors py-1">3. Sample Work</a>
+          <a href="#reviews" class="mobile-link text-textWarm hover:text-accentGold transition-colors py-1">4. Client Reviews</a>
+          <a href="#faq" class="mobile-link text-textWarm hover:text-accentGold transition-colors py-1">5. Common FAQ</a>
+          <a href="https://www.instagram.com/metaflux_ads" target="_blank" rel="noopener noreferrer" class="w-full text-center py-4 bg-accentGold text-bgMain font-bebas tracking-widest text-lg hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center gap-2">
+            BOOK A CALL ON INSTAGRAM
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-36 pb-24 md:pt-48 md:pb-36 overflow-hidden flex flex-col justify-center min-h-[90vh]">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-accentGold/10 via-transparent to-transparent pointer-events-none"></div>
+      
+      <div class="max-w-7xl mx-auto px-6 w-full text-center relative z-10 flex flex-col items-center">
+        <!-- Live Agency Intro -->
+        <span class="text-accentGold/90 font-medium tracking-[0.25em] text-xs uppercase mb-6 block border border-accentGold/20 px-4 py-2 bg-accentGold/[0.03] rounded-full">
+          Beauty & Skincare AI Product & UGC Ads Agency
+        </span>
+
+        <!-- Main Headline -->
+        <h1 class="font-bebas text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] tracking-tight leading-[0.9] text-textWarm drop-shadow-xl max-w-5xl">
+          Your Product. <br class="sm:hidden" />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-accentGold via-[#EADAAD] to-accentGold font-medium">Studio Quality.</span> <br />
+          Zero <span class="font-serif italic font-light tracking-wide text-accentGold hover:opacity-90 cursor-default">Shoot.</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="mt-8 text-lg md:text-xl text-textWarm/70 font-sans max-w-2xl leading-relaxed">
+          Premium AI-generated product ads & highly engaging UGC ads that convert — <span class="text-textWarm font-medium">no filming</span>, <span class="text-textWarm font-medium">no models</span>, no waiting weeks.
+        </p>
+
+        <!-- CTAs -->
+        <div class="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+          <a href="https://www.instagram.com/metaflux_ads" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 bg-accentGold text-bgMain font-medium text-sm tracking-widest hover:bg-[#b0935e] transition-all duration-300 text-center uppercase relative overflow-hidden group hover:shadow-[0_0_20px_rgba(201,169,110,0.4)]">
+            <span class="relative z-10 flex items-center justify-center gap-2">
+              Get Your Free Sample
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a href="#packages" class="w-full sm:w-auto px-8 py-4 bg-transparent text-textWarm border border-white/20 font-medium text-sm tracking-widest hover:bg-white/5 hover:border-accentGold transition-all duration-300 text-center uppercase">
+            View Packages
+          </a>
+        </div>
+
+        <!-- Trust Signals / Stats Row -->
+        <div class="mt-20 pt-10 border-t border-white/[0.06] w-full max-w-4xl grid grid-cols-3 gap-6 text-center">
+          <div class="flex flex-col items-center">
+            <span class="text-2xl md:text-4xl font-bebas text-accentGold tracking-wider">4K ULTRA</span>
+            <span class="text-[10px] md:text-xs text-textWarm/50 uppercase tracking-widest mt-1">Resolution</span>
+          </div>
+          <div class="flex flex-col items-center border-x border-white/[0.06]">
+            <span class="text-2xl md:text-4xl font-bebas text-accentGold tracking-wider">48 HOURS</span>
+            <span class="text-[10px] md:text-xs text-textWarm/50 uppercase tracking-widest mt-1">Delivery</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="text-2xl md:text-4xl font-bebas text-accentGold tracking-wider">24 / 7</span>
+            <span class="text-[10px] md:text-xs text-textWarm/50 uppercase tracking-widest mt-1">Support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE/TICKER BAR -->
+    <div class="bg-accentGold py-3.5 border-y border-accentGold overflow-hidden select-none mb-12 relative z-20">
+      <div class="marquee-track">
+        <!-- Content duplicated to ensure infinite marquee -->
+        <div class="flex items-center space-x-12 px-6 text-bgMain font-bebas text-lg tracking-[0.2em]">
+          <span>AI UGC ADS</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>BEAUTY BRANDS</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>NO SHOOT NEEDED</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>4K QUALITY</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>REELS READY</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>FAST DELIVERY</span> <span class="text-opacity-50 text-bgMain">✦</span>
+        </div>
+        <div class="flex items-center space-x-12 px-6 text-bgMain font-bebas text-lg tracking-[0.2em]" aria-hidden="true">
+          <span>AI UGC ADS</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>BEAUTY BRANDS</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>NO SHOOT NEEDED</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>4K QUALITY</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>REELS READY</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>FAST DELIVERY</span> <span class="text-opacity-50 text-bgMain">✦</span>
+        </div>
+        <div class="flex items-center space-x-12 px-6 text-bgMain font-bebas text-lg tracking-[0.2em]" aria-hidden="true">
+          <span>AI UGC ADS</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>BEAUTY BRANDS</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>NO SHOOT NEEDED</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>4K QUALITY</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>REELS READY</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>FAST DELIVERY</span> <span class="text-opacity-50 text-bgMain">✦</span>
+        </div>
+        <div class="flex items-center space-x-12 px-6 text-bgMain font-bebas text-lg tracking-[0.2em]" aria-hidden="true">
+          <span>AI UGC ADS</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>BEAUTY BRANDS</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>NO SHOOT NEEDED</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>4K QUALITY</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>REELS READY</span> <span class="text-opacity-50 text-bgMain">✦</span>
+          <span>FAST DELIVERY</span> <span class="text-opacity-50 text-bgMain">✦</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOW IT WORKS (3 steps) -->
+    <section id="process" class="py-24 max-w-7xl mx-auto px-6 reveal">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-accentGold text-xs uppercase tracking-[0.3em] font-medium">The Workflow</span>
+        <h2 class="font-bebas text-4xl md:text-5xl tracking-wide mt-2">How We Create Your High-Converting Ads</h2>
+        <div class="w-16 h-0.5 bg-accentGold mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <!-- Step 1 -->
+        <div class="bg-cardGray border border-white/[0.05] p-8 md:p-10 relative transition-transform duration-300 hover:-translate-y-2 group overflow-hidden">
+          <div class="absolute top-0 right-0 font-bebas text-7xl text-white/[0.02] translate-x-3 -translate-y-3 group-hover:text-accentGold/[0.04] transition-colors">01</div>
+          <span class="text-xs text-accentGold font-bebas tracking-[0.2em] uppercase border border-accentGold/30 px-3 py-1 bg-accentGold/[0.02]">STEP ONE</span>
+          <h3 class="font-bebas text-2xl tracking-wide text-textWarm mt-6 mb-3">Send Your Product</h3>
+          <p class="text-textWarm/70 text-sm leading-relaxed">
+            Share your product images, product details, and brand elements. <span class="text-accentGold font-medium">No physical product needed</span>, saving you shipping costs and border transit delays.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-cardGray border border-white/[0.05] p-8 md:p-10 relative transition-transform duration-300 hover:-translate-y-2 group overflow-hidden">
+          <div class="absolute top-0 right-0 font-bebas text-7xl text-white/[0.02] translate-x-3 -translate-y-3 group-hover:text-accentGold/[0.04] transition-colors">02</div>
+          <span class="text-xs text-accentGold font-bebas tracking-[0.2em] uppercase border border-accentGold/30 px-3 py-1 bg-accentGold/[0.02]">STEP TWO</span>
+          <h3 class="font-bebas text-2xl tracking-wide text-textWarm mt-6 mb-3">We Create Your Ad</h3>
+          <p class="text-textWarm/70 text-sm leading-relaxed">
+            Our AI builds premium 30-second product showreels or organic UGC style ads — featuring <span class="text-textWarm font-medium">custom copy & script</span>, 4K resolution, hyper-realistic beauty presenters, and cinematic sync editing.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-cardGray border border-white/[0.05] p-8 md:p-10 relative transition-transform duration-300 hover:-translate-y-2 group overflow-hidden">
+          <div class="absolute top-0 right-0 font-bebas text-7xl text-white/[0.02] translate-x-3 -translate-y-3 group-hover:text-accentGold/[0.04] transition-colors">03</div>
+          <span class="text-xs text-accentGold font-bebas tracking-[0.2em] uppercase border border-accentGold/30 px-3 py-1 bg-accentGold/[0.02]">STEP THREE</span>
+          <h3 class="font-bebas text-2xl tracking-wide text-textWarm mt-6 mb-3">Receive & Post</h3>
+          <p class="text-textWarm/70 text-sm leading-relaxed">
+            Get your final ads within 48 hours. Ready for Reels, TikTok, Stories, and paid social campaigns. <span class="text-accentGold font-medium">Full commercial rights are entirely included</span>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES (3 cards) -->
+    <section id="packages" class="py-24 bg-white/[0.01] border-y border-white/[0.04] reveal">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-accentGold text-xs uppercase tracking-[0.3em] font-medium">PRICING AND PLANS</span>
+          <h2 class="font-bebas text-4xl md:text-5xl tracking-wide mt-2">Choose Your MetaFlux Suite</h2>
+          <div class="w-16 h-0.5 bg-accentGold mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+          
+          <!-- Card 1: Starter -->
+          <div class="bg-cardGray border border-white/[0.05] p-8 flex flex-col justify-between transition-all duration-300 hover:border-white/10 relative">
+            <div>
+              <span class="text-accentGold text-sm tracking-widest font-medium uppercase font-bebas">STARTER SUITE</span>
+              <div class="my-6">
+                <span class="text-4xl md:text-5xl font-bebas tracking-wide block text-textWarm">$99 <span class="text-sm font-sans tracking-normal font-light text-textWarm/50 uppercase ml-1">One-Time</span></span>
+              </div>
+              <div class="w-full h-px bg-white/[0.06] my-6"></div>
+              
+              <ul class="space-y-4 text-sm text-textWarm/70 mb-8">
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span><strong>3 x 30-second</strong> AI product or UGC ads</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Custom written script for each ad</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>9:16 vertical videos (Reels optimized)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Premium 4K resolution output</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>1 free revision round per ad asset</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Full commercial rights included</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Delivery within 48 hours guaranteed</span>
+                </li>
+              </ul>
+            </div>
+            
+            <a href="https://www.instagram.com/metaflux_ads" target="_blank" rel="noopener noreferrer" class="w-full text-center py-3.5 border border-white/20 hover:border-accentGold hover:bg-accentGold hover:text-bgMain font-medium tracking-widest text-xs uppercase transition-all duration-300">
+              Get Started
+            </a>
+          </div>
+
+          <!-- Card 2: Elite Monthly -->
+          <div class="bg-cardGray border-2 border-accentGold p-8 flex flex-col justify-between transition-all duration-300 glow-gold relative scale-[1.02] lg:scale-105 z-10">
+            <!-- Popular Ribbon -->
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-accentGold text-bgMain font-bebas tracking-[0.15em] text-xs uppercase font-semibold">
+              MOST POPULAR
+            </div>
+
+            <div>
+              <span class="text-accentGold text-sm tracking-widest font-medium uppercase font-bebas">ELITE MONTHLY</span>
+              <div class="my-6">
+                <span class="text-4xl md:text-5xl font-bebas tracking-wide block text-textWarm">$600 <span class="text-sm font-sans tracking-normal font-light text-textWarm/50 uppercase ml-1">/ Month</span></span>
+              </div>
+              <div class="w-full h-px bg-white/[0.06] my-6"></div>
+              
+              <ul class="space-y-4 text-sm text-textWarm/70 mb-8">
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span><strong>20 x 30-second</strong> AI product or UGC ads</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Custom write-ups & script for every ad</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>9:16 vertical videos (TikTok & Reels layout)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>4K ultra-high resolution output</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>1 free refinement edit per ad</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Full commercial usage rights included</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Priority fast queue — 7 days batch delivery</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Dedicated accounts & strategy support</span>
+                </li>
+              </ul>
+            </div>
+            
+            <a href="https://www.instagram.com/metaflux_ads" target="_blank" rel="noopener noreferrer" class="w-full text-center py-4 bg-accentGold text-bgMain font-bold tracking-widest text-xs uppercase transition-all duration-300 hover:bg-white hover:text-bgMain hover:shadow-lg">
+              Claim This Package
+            </a>
+          </div>
+
+          <!-- Card 3: Growth+ -->
+          <div class="bg-cardGray border border-white/[0.05] p-8 flex flex-col justify-between transition-all duration-300 hover:border-white/10 relative">
+            <div>
+              <span class="text-accentGold text-sm tracking-widest font-medium uppercase font-bebas">GROWTH+ PLATINUM</span>
+              <div class="my-6">
+                <span class="text-4xl md:text-5xl font-bebas tracking-wide block text-textWarm">$750 <span class="text-sm font-sans tracking-normal font-light text-textWarm/50 uppercase ml-1">/ Month</span></span>
+              </div>
+              <div class="w-full h-px bg-white/[0.06] my-6"></div>
+              
+              <ul class="space-y-4 text-sm text-textWarm/70 mb-8">
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span><strong>20 x 30-second</strong> AI product or UGC ads</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span><strong>6 x premium</strong> studio product posters</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Custom written scripts for all ads</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>9:16 vertical videos + high resolution</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>4K ultra-vivid details output</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>1 revision round per visual layout asset</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Full commercial and publication rights</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-accentGold shrink-0 mt-0.5">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Priority 7-day batch queue + direct strategy support</span>
+                </li>
+              </ul>
+            </div>
+            
+            <a href="https://www.instagram.com/metaflux_ads" target="_blank" rel="noopener noreferrer" class="w-full text-center py-3.5 border border-white/20 hover:border-accentGold hover:bg-accentGold hover:text-bgMain font-medium tracking-widest text-xs uppercase transition-all duration-300">
+              Get Started
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="work" class="py-24 max-w-7xl mx-auto px-6 reveal">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-accentGold text-xs uppercase tracking-[0.3em] font-medium">SHOWCASE GALLERY</span>
+        <h2 class="font-bebas text-4xl md:text-5xl tracking-wide mt-2">Sample Work</h2>
+        <p class="text-textWarm/50 text-sm mt-2 font-sans">Crafted matching our clients' hyper-luxury beauty aesthetic.</p>
+        <div class="w-16 h-0.5 bg-accentGold mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Frame 1 -->
+        <div class="group relative bg-[#121212] border border-white/[0.05] overflow-hidden aspect-[4/3] flex items-center justify-center cursor-pointer transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(201,169,110,0.15)] flex-col">
+          <img src="/src/assets/images/luxury_moisturizer_bottle_1780755747227.png" alt="Luxury Moisturizer Ad Showcase" referrerPolicy="no-referrer" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-40" />
+          
+          <!-- Accent lines indicating premium framework -->
+          <div class="absolute inset-4 border border-white/10 opacity-70 group-hover:border-accentGold/30 transition-colors pointer-events-none z-10"></div>
+          
+          <!-- Play Icon -->
+          <div class="w-14 h-14 bg-bgMain/85 group-hover:bg-accentGold rounded-none flex items-center justify-center border border-accentGold transition-all duration-300 group-hover:scale-110 z-20">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-accentGold group-hover:text-bgMain transition-colors pl-0.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+            </svg>
+          </div>
+
+          <!-- Titles overlay which emerges on hover -->
+          <div class="absolute bottom-6 left-6 right-6 z-20 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+            <span class="text-xs text-accentGold font-bebas tracking-widest uppercase">METAFLUX ORIGINAL</span>
+            <h4 class="font-bebas text-2xl tracking-wide text-textWarm mt-1 opacity-90">Skincare Ad</h4>
+          </div>
+
+          <!-- Gold Line Reveal on Hover -->
+          <div class="absolute bottom-0 left-0 w-full h-1 bg-accentGold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 z-30"></div>
+        </div>
+
+        <!-- Frame 2 -->
+        <div class="group relative bg-[#121212] border border-white/[0.05] overflow-hidden aspect-[4/3] flex items-center justify-center cursor-pointer transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(201,169,110,0.15)] flex-col">
+          <img src="/src/assets/images/vogue_skincare_cream_1780755763489.png" alt="Pure Skin Labs Showcase" referrerPolicy="no-referrer" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-40" />
+          
+          <div class="absolute inset-4 border border-white/10 opacity-70 group-hover:border-accentGold/30 transition-colors pointer-events-none z-10"></div>
+          
+          <div class="w-14 h-14 bg-bgMain/85 group-hover:bg-accentGold rounded-none flex items-center justify-center border border-accentGold transition-all duration-300 group-hover:scale-110 z-20">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-accentGold group-hover:text-bgMain transition-colors pl-0.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+            </svg>
+          </div>
+
+          <div class="absolute bottom-6 left-6 right-6 z-20 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+            <span class="text-xs text-accentGold font-bebas tracking-widest uppercase">METAFLUX ORIGINAL</span>
+            <h4 class="font-bebas text-2xl tracking-wide text-textWarm mt-1 opacity-90">Beauty Ad</h4>
+          </div>
+
+          <div class="absolute bottom-0 left-0 w-full h-1 bg-accentGold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 z-30"></div>
+        </div>
+
+        <!-- Frame 3 -->
+        <div class="group relative bg-[#121212] border border-white/[0.05] overflow-hidden aspect-[4/3] flex items-center justify-center cursor-pointer transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(201,169,110,0.15)] flex-col">
+          <img src="/src/assets/images/beauty_collagen_serum_1780755780102.png" alt="Hydrating Serum Showcase" referrerPolicy="no-referrer" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-40" />
+          
+          <div class="absolute inset-4 border border-white/10 opacity-70 group-hover:border-accentGold/30 transition-colors pointer-events-none z-10"></div>
+          
+          <div class="w-14 h-14 bg-bgMain/85 group-hover:bg-accentGold rounded-none flex items-center justify-center border border-accentGold transition-all duration-300 group-hover:scale-110 z-20">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-accentGold group-hover:text-bgMain transition-colors pl-0.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+            </svg>
+          </div>
+
+          <div class="absolute bottom-6 left-6 right-6 z-20 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+            <span class="text-xs text-accentGold font-bebas tracking-widest uppercase">METAFLUX ORIGINAL</span>
+            <h4 class="font-bebas text-2xl tracking-wide text-textWarm mt-1 opacity-90">Moisturizer Ad</h4>
+          </div>
+
+          <div class="absolute bottom-0 left-0 w-full h-1 bg-accentGold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 z-30"></div>
+        </div>
+
+        <!-- Frame 4 -->
+        <div class="group relative bg-[#121212] border border-white/[0.05] overflow-hidden aspect-[4/3] flex items-center justify-center cursor-pointer transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(201,169,110,0.15)] flex-col">
+          <img src="/src/assets/images/organic_wellness_oil_1780755796820.png" alt="Wellness Essence Showcase" referrerPolicy="no-referrer" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-40" />
+          
+          <div class="absolute inset-4 border border-white/10 opacity-70 group-hover:border-accentGold/30 transition-colors pointer-events-none z-10"></div>
+          
+          <div class="w-14 h-14 bg-bgMain/85 group-hover:bg-accentGold rounded-none flex items-center justify-center border border-accentGold transition-all duration-300 group-hover:scale-110 z-20">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-accentGold group-hover:text-bgMain transition-colors pl-0.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+            </svg>
+          </div>
+
+          <div class="absolute bottom-6 left-6 right-6 z-20 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+            <span class="text-xs text-accentGold font-bebas tracking-widest uppercase">METAFLUX ORIGINAL</span>
+            <h4 class="font-bebas text-2xl tracking-wide text-textWarm mt-1 opacity-90">Wellness Ad</h4>
+          </div>
+
+          <div class="absolute bottom-0 left-0 w-full h-1 bg-accentGold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 z-30"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="reviews" class="py-24 bg-[#0d0d0d] border-y border-white/[0.04] reveal">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-accentGold text-xs uppercase tracking-[0.3em] font-medium">SUCCESS STORIES</span>
+          <h2 class="font-bebas text-4xl md:text-5xl tracking-wide mt-2">Validated Client Reviews</h2>
+          <div class="w-16 h-0.5 bg-accentGold mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          
+          <!-- Review 1 -->
+          <div class="bg-cardGray border border-white/[0.05] p-8 flex flex-col justify-between">
+            <div>
+              <!-- Stars -->
+              <div class="flex items-center space-x-1 text-accentGold mb-6">
+                <!-- 5 Stars SVG -->
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <p class="text-textWarm/80 text-sm italic leading-relaxed mb-8">
+                "The quality blew us away. Looked like we hired a full production team. Our Reels engagement doubled in the first week."
+              </p>
+            </div>
+            <div>
+              <div class="h-px bg-white/10 my-4"></div>
+              <span class="block text-textWarm font-semibold text-sm">Sarah M.</span>
+              <span class="block text-xs text-accentGold uppercase tracking-wider mt-0.5">Glow Beauty Co.</span>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="bg-cardGray border border-white/[0.05] p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center space-x-1 text-accentGold mb-6">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <p class="text-textWarm/80 text-sm italic leading-relaxed mb-8">
+                "Fast, professional, and the ads actually converted. I was skeptical about AI ads but this changed my mind completely."
+              </p>
+            </div>
+            <div>
+              <div class="h-px bg-white/10 my-4"></div>
+              <span class="block text-textWarm font-semibold text-sm">Priya K.</span>
+              <span class="block text-xs text-accentGold uppercase tracking-wider mt-0.5">Pure Skin Labs</span>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="bg-cardGray border border-white/[0.05] p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center space-x-1 text-accentGold mb-6">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <p class="text-textWarm/80 text-sm italic leading-relaxed mb-8">
+                "We were spending $2000/month on shoots. Now we get better content for a fraction of the cost. This is the future of marketing."
+              </p>
+            </div>
+            <div>
+              <div class="h-px bg-white/10 my-4"></div>
+              <span class="block text-textWarm font-semibold text-sm">Jessica T.</span>
+              <span class="block text-xs text-accentGold uppercase tracking-wider mt-0.5">Luxe Cosmetics</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING / CONTACT FORM -->
+    <section id="book" class="py-24 max-w-7xl mx-auto px-6 reveal">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Side Text -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-accentGold text-xs uppercase tracking-[0.3em] font-medium block">GET CREATIVE SAMPLES</span>
+          <h2 class="font-bebas text-4xl sm:text-5xl md:text-6xl tracking-wide leading-none text-textWarm">
+            Let's Talk <br />Strategy
+          </h2>
+          <div class="w-16 h-0.5 bg-accentGold"></div>
+          
+          <p class="text-textWarm/70 text-base leading-relaxed">
+            Ready to scale your conversions with high-performing AI ads? Book your consultation or fill out the brand form to secure a complimentary ad sample of your product.
+          </p>
+
+          <div class="space-y-4 pt-4">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-none border border-accentGold/40 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-4 h-4 text-accentGold">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+              </div>
+              <span class="text-textWarm/90 text-sm">Free 15-minute onboarding & strategy call</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-none border border-accentGold/40 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-4 h-4 text-accentGold">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+              </div>
+              <span class="text-textWarm/90 text-sm">Active 24/7 client response desk</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-none border border-accentGold/40 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-4 h-4 text-accentGold">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+              </div>
+              <span class="text-textWarm/90 text-sm">Zero commitment of physical sample shipping</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-none border border-accentGold/40 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-4 h-4 text-accentGold">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                </svg>
+              </div>
+              <span class="text-textWarm/90 text-sm">Receive a free custom premium ad mockup</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side Form -->
+        <div class="lg:col-span-7 bg-cardGray border border-white/[0.05] p-8 md:p-12">
+          <form id="brand-form" class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- Name -->
+              <div>
+                <label for="name" class="block text-xs uppercase tracking-widest text-[#9c9790] mb-2 font-medium">Your Name *</label>
+                <input type="text" id="name" required class="w-full bg-[#121212] border border-white/10 px-4 py-3 text-textWarm placeholder-white/20 focus:outline-none focus:border-accentGold transition-colors text-sm rounded-none" placeholder="e.g. Lochan Saru">
+              </div>
+              <!-- Brand Name -->
+              <div>
+                <label for="brand" class="block text-xs uppercase tracking-widest text-[#9c9790] mb-2 font-medium">Brand Name *</label>
+                <input type="text" id="brand" required class="w-full bg-[#121212] border border-white/10 px-4 py-3 text-textWarm placeholder-white/20 focus:outline-none focus:border-accentGold transition-colors text-sm rounded-none" placeholder="e.g. MetaFlux Cosmetics">
+              </div>
+            </div>
+
+            <!-- Email Address -->
+            <div>
+              <label for="email" class="block text-xs uppercase tracking-widest text-[#9c9790] mb-2 font-medium">Email Address *</label>
+              <input type="email" id="email" required class="w-full bg-[#121212] border border-white/10 px-4 py-3 text-textWarm placeholder-white/20 focus:outline-none focus:border-accentGold transition-colors text-sm rounded-none" placeholder="lochansaru683@gmail.com">
+            </div>
+
+            <!-- Package Interest Dropdown -->
+            <div>
+              <label for="package" class="block text-xs uppercase tracking-widest text-[#9c9790] mb-2 font-medium">Package Interest</label>
+              <div class="relative">
+                <select id="package" class="w-full bg-[#121212] border border-white/10 px-4 py-3 text-textWarm placeholder-white/20 focus:outline-none focus:border-accentGold transition-colors text-sm rounded-none appearance-none cursor-pointer">
+                  <option value="Starter $99">Starter Suite ($99 One-Time)</option>
+                  <option value="Elite $600" selected>Elite Monthly ($600/Month) - Most Popular</option>
+                  <option value="Growth+ $750">Growth+ Premium ($750/Month)</option>
+                  <option value="Custom / Unsure">Custom Ad Batch / Not Sure</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-accentGold">
+                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button Trigger -->
+            <button type="submit" class="w-full py-4 bg-accentGold hover:bg-[#b0935e] text-bgMain font-medium tracking-widest text-sm uppercase transition-all duration-300 flex items-center justify-center gap-2 group hover:shadow-[0_0_20px_rgba(201,169,110,0.3)] select-none">
+              Send Message via Instagram
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+            
+            <p class="text-[11px] text-textWarm/40 text-center leading-relaxed">
+              * By clicking submit, your preference is validated and you will be directed straight to MetaFlux DM desk on Instagram for immediate confirmation.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ SECTION (accordion -> interactive click) -->
+    <section id="faq" class="py-24 bg-white/[0.01] border-y border-white/[0.04] reveal">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-accentGold text-xs uppercase tracking-[0.3em] font-medium">COMMON CONCERNS</span>
+          <h2 class="font-bebas text-4xl md:text-5xl tracking-wide mt-2">Frequently Asked Questions</h2>
+          <div class="w-16 h-0.5 bg-accentGold mx-auto mt-4"></div>
+        </div>
+
+        <div class="space-y-4">
+          
+          <!-- Accordion Q1 -->
+          <div class="bg-cardGray border border-white/[0.05] select-none cursor-pointer group rounded-none" onclick="toggleFaq(1)">
+            <div class="flex items-center justify-between p-6">
+              <h3 class="font-medium text-base tracking-wide text-textWarm group-hover:text-accentGold transition-colors pr-4">
+                Do I need to send a physical product?
+              </h3>
+              <div class="w-8 h-8 rounded-none border border-white/10 group-hover:border-accentGold/40 flex items-center justify-center shrink-0 transition-colors duration-300" id="faq-btn-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accentGold transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+            </div>
+            <div class="px-6 pb-6 text-sm text-textWarm/70 leading-relaxed hidden transition-all" id="faq-ans-1">
+              No physical product is needed. Just send your existing product images, raw phone snaps, key product details (features, ingredients, or USP), brand colors, and copy preferences. Our advanced visual AI pipelines handles rendering professional 30-second studio ad layouts from high-resolution layers.
+            </div>
+          </div>
+
+          <!-- Accordion Q2 -->
+          <div class="bg-cardGray border border-white/[0.05] select-none cursor-pointer group rounded-none" onclick="toggleFaq(2)">
+            <div class="flex items-center justify-between p-6">
+              <h3 class="font-medium text-base tracking-wide text-textWarm group-hover:text-accentGold transition-colors pr-4">
+                How long does delivery take?
+              </h3>
+              <div class="w-8 h-8 rounded-none border border-white/10 group-hover:border-accentGold/40 flex items-center justify-center shrink-0 transition-colors duration-300" id="faq-btn-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accentGold transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+            </div>
+            <div class="px-6 pb-6 text-sm text-textWarm/70 leading-relaxed hidden transition-all" id="faq-ans-2">
+              Single test ads and our standard Starter pack ads are delivered securely to your inbox within 48 hours. Enterprise and monthly recurring packages (batching 20 ads) are prepared, curated, and delivered within 7 working days.
+            </div>
+          </div>
+
+          <!-- Accordion Q3 -->
+          <div class="bg-cardGray border border-white/[0.05] select-none cursor-pointer group rounded-none" onclick="toggleFaq(3)">
+            <div class="flex items-center justify-between p-6">
+              <h3 class="font-medium text-base tracking-wide text-textWarm group-hover:text-accentGold transition-colors pr-4">
+                Can I use these ads for paid campaigns?
+              </h3>
+              <div class="w-8 h-8 rounded-none border border-white/10 group-hover:border-accentGold/40 flex items-center justify-center shrink-0 transition-colors duration-300" id="faq-btn-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accentGold transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+            </div>
+            <div class="px-6 pb-6 text-sm text-textWarm/70 leading-relaxed hidden transition-all" id="faq-ans-3">
+              Absolutely yes. All visual creative deliverables are accompanied by full commercial usage rights in perpetuity. You are fully authorized to publish resources across Instagram Ads, TikTok Spark Ads, Facebook, YouTube Shorts, Google Performance Max campaigns, or on your brand website.
+            </div>
+          </div>
+
+          <!-- Accordion Q4 -->
+          <div class="bg-cardGray border border-white/[0.05] select-none cursor-pointer group rounded-none" onclick="toggleFaq(4)">
+            <div class="flex items-center justify-between p-6">
+              <h3 class="font-medium text-base tracking-wide text-textWarm group-hover:text-accentGold transition-colors pr-4">
+                What if I'm not happy with the ad?
+              </h3>
+              <div class="w-8 h-8 rounded-none border border-white/10 group-hover:border-accentGold/40 flex items-center justify-center shrink-0 transition-colors duration-300" id="faq-btn-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accentGold transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+            </div>
+            <div class="px-6 pb-6 text-sm text-textWarm/70 leading-relaxed hidden transition-all" id="faq-ans-4">
+              Every deliverable features 1 free complete revision cycle. You can explicitly share feedback about styling accents, texts, pacing, or presentation, and we will update and render a fresh output within 24 hours.
+            </div>
+          </div>
+
+          <!-- Accordion Q5 -->
+          <div class="bg-cardGray border border-white/[0.05] select-none cursor-pointer group rounded-none" onclick="toggleFaq(5)">
+            <div class="flex items-center justify-between p-6">
+              <h3 class="font-medium text-base tracking-wide text-textWarm group-hover:text-accentGold transition-colors pr-4">
+                What niches do you work with?
+              </h3>
+              <div class="w-8 h-8 rounded-none border border-white/10 group-hover:border-accentGold/40 flex items-center justify-center shrink-0 transition-colors duration-300" id="faq-btn-5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accentGold transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+            </div>
+            <div class="px-6 pb-6 text-sm text-textWarm/70 leading-relaxed hidden transition-all" id="faq-ans-5">
+              While our primary specialization is in High-End Beauty, Organic Skincare, Hydrating Cosmetics, and Botanical Oils, we successfully produce ads for closely associated wellness products, natural supplements, active lifestyle assets, and retail brands.
+            </div>
+          </div>
+
+          <!-- Accordion Q6 -->
+          <div class="bg-cardGray border border-white/[0.05] select-none cursor-pointer group rounded-none" onclick="toggleFaq(6)">
+            <div class="flex items-center justify-between p-6">
+              <h3 class="font-medium text-base tracking-wide text-textWarm group-hover:text-accentGold transition-colors pr-4">
+                How do I pay?
+              </h3>
+              <div class="w-8 h-8 rounded-none border border-white/10 group-hover:border-accentGold/40 flex items-center justify-center shrink-0 transition-colors duration-300" id="faq-btn-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accentGold transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+            </div>
+            <div class="px-6 pb-6 text-sm text-textWarm/70 leading-relaxed hidden transition-all" id="faq-ans-6">
+              We securely clear transactions through global systems such as Wise, standard Wire Transfers, and Stripe invoices. All payments are verified securely upfront, with subscription batches cleared on the 1st of each calendar month.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="py-20 max-w-7xl mx-auto px-6 reveal">
+      <div class="bg-[#121212] border border-white/[0.04] p-8 md:p-14 flex flex-col items-center text-center">
+        
+        <span class="text-accentGold text-xs uppercase tracking-[0.3em] font-medium block mb-4">DIRECT CHANNELS</span>
+        <h2 class="font-bebas text-3xl md:text-5xl tracking-wide max-w-2xl leading-tight">
+          Secure Onboarding & Direct Support Desk
+        </h2>
+        <p class="text-textWarm/50 text-sm mt-3 max-w-xl font-sans">
+          Click on any preferred link to spark conversations instantly. Our average client response queue is under 15 minutes.
+        </p>
+
+        <!-- Social Buttons Grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-10 w-full max-w-4xl">
+          <!-- WhatsApp Button -->
+          <a href="https://wa.me/message/4G43DIK4J6N5A1" target="_blank" rel="noopener noreferrer" class="py-4 border border-white/10 hover:border-accentGold hover:bg-accentGold/[0.04] hover:text-accentGold transition-all duration-300 font-medium tracking-widest text-xs uppercase flex items-center justify-center gap-2">
+            WhatsApp
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+          <!-- Instagram Button -->
+          <a href="https://www.instagram.com/metaflux_ads" target="_blank" rel="noopener noreferrer" class="py-4 border border-white/10 hover:border-accentGold hover:bg-accentGold/[0.04] hover:text-accentGold transition-all duration-300 font-medium tracking-widest text-xs uppercase flex items-center justify-center gap-2">
+            Instagram
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <!-- Facebook Button -->
+          <a href="https://www.facebook.com/share/18p2Qh2RdT/" target="_blank" rel="noopener noreferrer" class="py-4 border border-white/10 hover:border-accentGold hover:bg-accentGold/[0.04] hover:text-accentGold transition-all duration-300 font-medium tracking-widest text-xs uppercase flex items-center justify-center gap-2">
+            Facebook
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <!-- Email Button -->
+          <a href="mailto:lochansaru683@gmail.com" class="py-4 border border-white/10 hover:border-accentGold hover:bg-accentGold/[0.04] hover:text-accentGold transition-all duration-300 font-medium tracking-widest text-xs uppercase flex items-center justify-center gap-2">
+            Email Box
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Available Pulsing Status -->
+        <div class="mt-12 flex items-center justify-center space-x-3 bg-white/[0.02] border border-white/[0.05] py-3.5 px-6 rounded-none">
+          <span class="relative flex h-2 w-2">
+            <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span class="text-xs text-textWarm/70 font-medium tracking-wide">
+            Available 24/7 · Syangja, Nepal · GMT+5:45
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/[0.05] py-14 bg-bgMain text-textWarm/50 relative z-10 text-sm">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <!-- Left Footer -->
+        <div class="flex flex-col items-center md:items-start">
+          <a href="#" class="text-2xl font-bebas text-textWarm tracking-wide">
+            META<span class="text-accentGold">FLUX</span> ADS
+          </a>
+          <span class="text-xs uppercase tracking-widest text-white/30 block mt-2 text-center md:text-left">
+            © 2026 MetaFlux Ads · Lochan Saru · All rights reserved
+          </span>
+        </div>
+
+        <!-- Middle Anchor Navigation -->
+        <div class="flex space-x-8 text-xs uppercase tracking-widest">
+          <a href="#process" class="hover:text-accentGold transition-colors">Process</a>
+          <a href="#packages" class="hover:text-accentGold transition-colors">Packages</a>
+          <a href="#book" class="hover:text-accentGold transition-colors">Contact</a>
+        </div>
+
+        <!-- Right Nepal Label -->
+        <div class="text-xs text-white/20 uppercase tracking-widest text-center md:text-right">
+          Made in Syangja, Nepal
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC FEATURES FOR INTERACTION -->
+    <script>
+      // 1. Mobile Menu Toggler
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+
+      menuBtn.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.contains('opacity-100');
+        if (isOpen) {
+          // Close drawer
+          mobileMenu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
+          mobileMenu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+          // Burger Icon
+          menuIcon.innerHTML = `
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          `;
+        } else {
+          // Open drawer
+          mobileMenu.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
+          mobileMenu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+          // Close "X" Cross Icon
+          menuIcon.innerHTML = `
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          `;
+        }
+      });
+
+      // Auto-close mobile drawer when any link is clicked
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
+          mobileMenu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+          menuIcon.innerHTML = `
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          `;
+        });
+      });
+
+      // 2. Interactive Accordion Toggles
+      function toggleFaq(index) {
+        const answer = document.getElementById(`faq-ans-${index}`);
+        const button = document.getElementById(`faq-btn-${index}`);
+        
+        const isHidden = answer.classList.contains('hidden');
+        
+        // Hide all others to act like a true clean accordion
+        for (let i = 1; i <= 6; i++) {
+          const ans = document.getElementById(`faq-ans-${i}`);
+          const btn = document.getElementById(`faq-btn-${i}`);
+          if (ans && btn) {
+            ans.classList.add('hidden');
+            btn.querySelector('svg').style.transform = 'rotate(0deg)';
+          }
+        }
+
+        // Toggle requested
+        if (isHidden) {
+          answer.classList.remove('hidden');
+          button.querySelector('svg').style.transform = 'rotate(180deg)';
+        } else {
+          answer.classList.add('hidden');
+          button.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+      }
+
+      // 3. Scroll Reveal Observer
+      const reveals = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target); // Reveal once
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      reveals.forEach(el => {
+        revealObserver.observe(el);
+      });
+
+      // Trigger standard reveal for elements visible immediately on load
+      window.addEventListener('load', () => {
+        const revealsOnLoad = document.querySelectorAll('.reveal');
+        revealsOnLoad.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight) {
+            el.classList.add('active');
+          }
+        });
+      });
+
+      // 4. Form Submit handler targeting Instagram
+      const brandForm = document.getElementById('brand-form');
+      brandForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Save inputs
+        const nameInput = document.getElementById('name').value.trim();
+        const brandInput = document.getElementById('brand').value.trim();
+        const emailInput = document.getElementById('email').value.trim();
+        const selectedPackage = document.getElementById('package').value;
+
+        // Open WhatsApp Message in separate tab or Instagram DM with formatted parameter details
+        const instagramUrl = 'https://www.instagram.com/metaflux_ads';
+        
+        // To build complete context, write to console or custom alert before action securely
+        console.log(`Onboarding Form Validated:\nName: ${nameInput}\nBrand: ${brandInput}\nEmail: ${emailInput}\nPackage: ${selectedPackage}`);
+        
+        // Open the URL directly
+        window.open(instagramUrl, '_blank');
+      });
+
+      // 5. Navigation sticky visual changes on scroll
+      const mainNav = document.getElementById('main-nav');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          mainNav.classList.add('bg-bgMain/95', 'border-b-accentGold/20', 'shadow-md', 'h-16');
+          mainNav.classList.remove('bg-bgMain/90', 'border-b-white/[0.06]', 'h-20');
+        } else {
+          mainNav.classList.add('bg-bgMain/90', 'border-b-white/[0.06]', 'h-20');
+          mainNav.classList.remove('bg-bgMain/95', 'border-b-accentGold/20', 'shadow-md', 'h-16');
+        }
+      });
+
+      // 6. Navigation Link Highlighting on Scroll
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('section[id]');
+
+      window.addEventListener('scroll', () => {
+        let currentSectionId = '';
+        const scrollPosition = window.scrollY + 100;
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSectionId = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('text-accentGold', 'border-accentGold');
+          link.classList.add('border-transparent');
+          if (link.getAttribute('href') === `#${currentSectionId}`) {
+            link.classList.add('text-accentGold', 'border-accentGold');
+            link.classList.remove('border-transparent');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

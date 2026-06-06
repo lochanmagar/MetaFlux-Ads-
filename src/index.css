@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Instrument+Serif:ital@0;1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bgMain: #080808;
+  --color-accentGold: #C9A96E;
+  --color-textWarm: #F0EBE3;
+  --color-cardGray: #1A1A1A;
+
+  --font-sans: "DM Sans", sans-serif;
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-serif: "Instrument Serif", serif;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-custom {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee-custom:hover {
+  animation-play-state: paused;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+.glow-gold-custom:hover {
+  box-shadow: 0 0 20px rgba(201, 169, 110, 0.2);
+  border-color: #C9A96E;
+}
+
+/* Custom styled scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A1A1A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A96E;
+}

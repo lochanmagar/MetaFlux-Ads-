@@ -1,0 +1,6 @@
+{
+  "name": "MetaFlux Ads",
+  "description": "Premium AI-generated product ad videos for Beauty and Skincare brands.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
